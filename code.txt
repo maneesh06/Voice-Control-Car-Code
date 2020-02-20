@@ -1,0 +1,8 @@
+
+void setup() {
+  BT.begin(9600);    //start communication to HC05
+  Serial.begin(9600);
+  pinMode(3, OUTPUT);  //  right forward
+  pinMode(4, OUTPUT);  // left forward
+  pinMode(5, OUTPUT);  //right backward
+  pinMode(6, OUTPUT);  //left backward

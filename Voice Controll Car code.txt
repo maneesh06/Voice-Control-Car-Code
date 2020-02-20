@@ -1,0 +1,252 @@
+#include <SoftwareSerial.h>
+
+//RX  TX respectely
+SoftwareSerial BT(2, 3);
+char c; 
+
+void setup() {
+  BT.begin(9600);    //start communication to HC05
+  Serial.begin(9600);
+  pinMode(3, OUTPUT);  //  right forward
+  pinMode(4, OUTPUT);  // left forward
+  pinMode(5, OUTPUT);  //right backward
+  pinMode(6, OUTPUT);  //left backward
+
+}
+//-----------------------------------------------------------------------// 
+void loop() {
+  while (BT.available()){   //Check if there is an available any command to read
+  delay(10);                //Delay added so that all things can make thing stable
+  char c = BT.read();       //serial read
+  } 
+  if (c > 0) {
+    Serial.println(c);
+
+  if(c == 1)   // to initiallise 'Forward' as a '1'
+  {
+    digitalWrite(3, HIGH);
+    digitalWrite (4, HIGH);
+    digitalWrite(5,LOW);
+    digitalWrite(6,LOW);
+    delay(100);
+  }
+
+  else if(c == 2)  //'backward' as '2'
+  {
+    digitalWrite(3, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(5, HIGH);
+    digitalWrite(6,HIGH);
+    delay(100);
+  }
+
+  else if (c == 3)  //'left' as '3'
+  {
+    digitalWrite (3,HIGH);
+    digitalWrite (4,LOW);
+    digitalWrite (5,LOW);
+    digitalWrite (6,LOW);
+    delay (800);
+    digitalWrite(3, HIGH);
+    digitalWrite (4, HIGH);
+    digitalWrite(5,LOW);
+    digitalWrite(6,LOW);
+    delay(100);
+  
+  }
+
+ else if ( c == 4)// 'right' as '4'
+ {
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (800);
+      digitalWrite(3, HIGH);
+    digitalWrite (4, HIGH);
+    digitalWrite(5,LOW);
+    digitalWrite(6,LOW);
+    delay(100);
+ }
+
+ else if (c == 5)   //'stop' as '5'
+ {
+   digitalWrite (3, LOW);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (100);
+ }
+ else if (c == 6)  // 'to keep watch in all direction' as '6'
+ {
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (100);
+ }
+  else if (c == 7)  // for 'show Dance' as '7'
+ {
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, LOW);
+   digitalWrite (6, LOW);
+   delay (400);
+   digitalWrite(3, HIGH);
+   digitalWrite (4, HIGH);
+   digitalWrite(5,LOW);
+   digitalWrite(6,LOW);
+   delay(600);
+   digitalWrite (3, LOW);
+   digitalWrite (4, HIGH);
+   digitalWrite (5, HIGH);
+   digitalWrite (6, LOW);
+   delay (500);
+   digitalWrite (3, HIGH);
+   digitalWrite (4, LOW);
+   digitalWrite (5, LOW);
+   digitalWrite (6, HIGH);
+   delay (500);
+  }
+  } }
